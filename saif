@@ -1,0 +1,41 @@
+
+task.wait()
+if game.PlaceId == 8304191830 then
+    local args = {
+    [1] = "_lobbytemplategreen10"
+    }
+    
+    local args2 = {
+        [1] = "_lobbytemplategreen10",
+        [2] = "namek_level_1",
+        [3] = true,
+        [4] = "Normal"
+    }
+    
+    local args3 = {
+        [1] = "_lobbytemplategreen10"
+    }
+    
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_join_lobby:InvokeServer(unpack(args))
+    task.wait(0.2)
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_level:InvokeServer(unpack(args2))
+    task.wait(0.2)
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_game:InvokeServer(unpack(args3))
+    task.wait(0.2)
+    game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+    
+        elseif
+            game.PlaceId == 8349889591 then 
+            task.wait()
+    while true do 
+    task.wait()
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+                task.wait()
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_wave_skip:InvokeServer()
+                task.wait(22)
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
+                task.wait()
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+    
+    end
+    end
