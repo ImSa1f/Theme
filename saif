@@ -1,4 +1,5 @@
 
+
 task.wait()
 if game.PlaceId == 8304191830 then
     local args = {
@@ -12,6 +13,7 @@ if game.PlaceId == 8304191830 then
         [4] = "Normal"
     }
     
+    
     local args3 = {
         [1] = "_lobbytemplategreen10"
     }
@@ -21,21 +23,25 @@ if game.PlaceId == 8304191830 then
     game:GetService("ReplicatedStorage").endpoints.client_to_server.request_lock_level:InvokeServer(unpack(args2))
     task.wait(0.2)
     game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_game:InvokeServer(unpack(args3))
-    task.wait(0.2)
-    game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+
     
         elseif
             game.PlaceId == 8349889591 then 
             task.wait()
     while true do 
-    task.wait()
+    task.wait(1)
                 game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
                 task.wait()
                 game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_wave_skip:InvokeServer()
-                task.wait(22)
+                task.wait(8)
                 game:GetService("ReplicatedStorage").endpoints.client_to_server.teleport_back_to_lobby:InvokeServer()
-                task.wait()
-                game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
-    
+    end
+    while true do
+    task.wait()
+                   for i,v in pairs(getconnections(game.Players.LocalPlayer.PlayerGui.ResultsUI.Finished.Next.Activated)) do
+                    v:Fire() 
+
+                                
+    end
     end
     end
