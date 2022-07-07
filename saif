@@ -1,7 +1,9 @@
-
-
+if not game:IsLoaded() 
+then game.Loaded:Wait()
+    end
 task.wait()
 if game.PlaceId == 8304191830 then
+    
     local args = {
     [1] = "_lobbytemplategreen10"
     }
@@ -12,7 +14,6 @@ if game.PlaceId == 8304191830 then
         [3] = true,
         [4] = "Normal"
     }
-    
     
     local args3 = {
         [1] = "_lobbytemplategreen10"
@@ -43,5 +44,5 @@ if game.PlaceId == 8304191830 then
 
                                 
     end
-    end
-    end
+end
+end
